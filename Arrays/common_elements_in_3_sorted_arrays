@@ -1,0 +1,23 @@
+vector <int> commonElements (int A[], int B[], int C[], int n1, int n2, int n3)
+        {
+            //code here
+           int i=0,j=0,k=0,c;
+           vector<int> ans;
+           while(i<n1 && j<n2 && k<n3){
+               if(A[i]==B[j] && B[j]==C[k] && c!=A[i]){
+                   ans.push_back(A[i]);
+                   c=A[i];
+                   i++;
+                   j++;
+                   k++;
+               }else {
+             int m=min({A[i],B[j],C[k]});
+             if(m == A[i])i++;
+             else if(m==B[j])j++;
+             else k++;
+             }
+                   
+               
+           }
+            return ans;
+        }
